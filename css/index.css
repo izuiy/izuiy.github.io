@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  margin: 0 auto;
+  max-width: 800px;
+  min-width: 320px;
+}
+
+.main {
+  box-shadow: 0 1px 6px #ccc;
+  margin: 20px;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 20px;
+  line-height: 60px;
+  border-bottom: 1px solid #666;
+  margin-top: 40px;
+}
+
+.blank {
+  height: 20px;
+}
+
+p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #494949;
+}
+
+.fs_14 {
+  font-size: 14px;
+}
+
+.c_black {
+  color: #000;
+}
+
+.c_red {
+  color: #ff0000;
+}
+
+.c_grey {
+  color: #808080;
+}
+
+.main img {
+  width: 100%;
+  height: auto;
+}
