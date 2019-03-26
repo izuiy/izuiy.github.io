@@ -569,7 +569,8 @@
                     Math.ceil(this.distanceRan));
 
                 if (playAchievementSound) {
-                    this.playSound(this.soundFx.SCORE);
+                    // this.playSound(this.soundFx.SCORE);
+                    this.playSound('score');
                 }
 
                 // Night mode.
@@ -682,7 +683,8 @@
                     }
                     //  Play sound effect and jump on starting the game for the first time.
                     if (!this.tRex.jumping && !this.tRex.ducking) {
-                        this.playSound(this.soundFx.BUTTON_PRESS);
+                        // this.playSound(this.soundFx.BUTTON_PRESS);
+                        this.playSound('press');
                         this.tRex.startJump(this.currentSpeed);
                     }
                 }
@@ -770,7 +772,8 @@
          * Game over state.
          */
         gameOver: function () {
-            this.playSound(this.soundFx.HIT);
+            // this.playSound(this.soundFx.HIT);
+            this.playSound('hit');
             vibrate(200);
 
             this.stop();
@@ -829,7 +832,8 @@
                 this.distanceMeter.reset(this.highestScore);
                 this.horizon.reset();
                 this.tRex.reset();
-                this.playSound(this.soundFx.BUTTON_PRESS);
+                // this.playSound(this.soundFx.BUTTON_PRESS);
+                this.playSound('press');
                 this.invert(true);
                 this.update();
             }
@@ -852,13 +856,18 @@
          * Play a sound.
          * @param {SoundBuffer} soundBuffer
          */
-        playSound: function (soundBuffer) {
+        playSoundBak: function (soundBuffer) {
             if (soundBuffer) {
                 var sourceNode = this.audioContext.createBufferSource();
                 sourceNode.buffer = soundBuffer;
                 sourceNode.connect(this.audioContext.destination);
                 sourceNode.start(0);
             }
+        },
+
+        playSound: function (type) {
+            var audio = new Audio('./t-rex-runner/sounds/' + type + '.mp3');
+            audio.play()
         },
 
         /**
